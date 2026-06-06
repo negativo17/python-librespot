@@ -2,7 +2,7 @@
 
 Name:           python-librespot
 Version:        0.0.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Open Source Spotify Client
 License:        Apache-2.0
 URL:            http://librespot-python.rtfd.io/
@@ -41,6 +41,9 @@ Summary:        %{summary}
 %{python3_sitelib}/librespot_player
 
 %changelog
+* Sat Jun 06 2026 Simone Caronni <negativo17@gmail.com> - 0.0.10-2
+- Fix requirements.
+
 * Sat Jun 06 2026 Simone Caronni <negativo17@gmail.com> - 0.0.10-1
 - First build.
 

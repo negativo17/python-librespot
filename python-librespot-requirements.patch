@@ -1,10 +1,10 @@
 diff -Naur librespot-python-0.0.10.old/requirements.txt librespot-python-0.0.10/requirements.txt
---- librespot-python-0.0.10.old/requirements.txt	2026-06-06 09:46:13.891396615 +0200
-+++ librespot-python-0.0.10/requirements.txt	2026-06-06 10:45:28.102332050 +0200
+--- librespot-python-0.0.10.old/requirements.txt	2026-06-06 11:18:48.167814415 +0200
++++ librespot-python-0.0.10/requirements.txt	2026-06-06 11:19:09.140144007 +0200
 @@ -1,7 +1,7 @@
  defusedxml>=0.7.1
 -protobuf==3.20.1
-+protobuf>=3.19.6
++protobuf>=3.20
  pycryptodomex>=3.22.0
 -pyogg>=0.6.14a.1
 +pyogg>=0.6.14a1
