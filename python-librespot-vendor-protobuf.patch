@@ -1,0 +1,13 @@
+diff -Naur librespot-python-0.0.10.old/librespot/__init__.py librespot-python-0.0.10/librespot/__init__.py
+--- librespot-python-0.0.10.old/librespot/__init__.py	2026-06-06 11:18:48.167814415 +0200
++++ librespot-python-0.0.10/librespot/__init__.py	2026-06-06 11:19:09.140144007 +0200
+@@ -1,4 +1,9 @@
+ from __future__ import annotations
++import os as _os
++import sys as _sys
++_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '_vendor'))
++del _os, _sys
++
+ from librespot.crypto import DiffieHellman
+ from librespot.proto.Keyexchange_pb2 import BuildInfo, Platform, Product, ProductFlags
+ from librespot.structure import Closeable, Runnable
