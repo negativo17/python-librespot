@@ -10,6 +10,10 @@ BuildArch:      noarch
 
 Source0:        https://github.com/kokarare1212/%{srcname}/archive/v%{version}.tar.gz#/%{srcname}-%{version}.tar.gz
 Patch0:         %{name}-requirements.patch
+# Upstream patches:
+Patch10:        https://github.com/kokarare1212/librespot-python/commit/b88bafdb110e6d9351050d10fffdfff001271317.patch
+Patch11:        https://github.com/kokarare1212/librespot-python/commit/5e108e943985313fe65806fe7c08200a45fe2d71.patch
+Patch12:        https://github.com/kokarare1212/librespot-python/commit/e7dcf4b2998a7102b241712e0e3d63d976db6ed7.patch
 
 BuildRequires:  python3-devel
 
@@ -43,6 +47,7 @@ Summary:        %{summary}
 %changelog
 * Sat Jun 06 2026 Simone Caronni <negativo17@gmail.com> - 0.0.10-2
 - Fix requirements.
+- Backport upstream fixes.
 
 * Sat Jun 06 2026 Simone Caronni <negativo17@gmail.com> - 0.0.10-1
 - First build.
