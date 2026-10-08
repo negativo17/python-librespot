@@ -1,24 +1,24 @@
+%global commit 683d9e76f91ba7ae03919494dac8d899ca505651
+%global date 20260804
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+
 %global srcname librespot-python
 %global protobuf_version 3.20.3
 
 %global __requires_exclude_from %{python3_sitelib}/librespot/_vendor/
 
 Name:           python-librespot
-Version:        0.0.10
-Release:        3%{?dist}
+Version:        0.0.10^%{date}git%{shortcommit}
+Release:        1%{?dist}
 Summary:        Open Source Spotify Client
 License:        Apache-2.0
 URL:            http://librespot-python.rtfd.io/
 BuildArch:      noarch
 
-Source0:        https://github.com/kokarare1212/%{srcname}/archive/v%{version}.tar.gz#/%{srcname}-%{version}.tar.gz
+Source0:        https://github.com/kokarare1212/%{srcname}/archive/%{commit}/%{srcname}-%{shortcommit}.tar.gz
 Source1:        https://files.pythonhosted.org/packages/source/p/protobuf/protobuf-%{protobuf_version}.tar.gz
 Patch0:         %{name}-requirements.patch
 Patch1:         %{name}-vendor-protobuf.patch
-# Upstream patches:
-Patch10:        https://github.com/kokarare1212/librespot-python/commit/b88bafdb110e6d9351050d10fffdfff001271317.patch
-Patch11:        https://github.com/kokarare1212/librespot-python/commit/5e108e943985313fe65806fe7c08200a45fe2d71.patch
-Patch12:        https://github.com/kokarare1212/librespot-python/commit/e7dcf4b2998a7102b241712e0e3d63d976db6ed7.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -35,7 +35,7 @@ Provides:       bundled(python3dist(protobuf)) = %{protobuf_version}
 %description -n python3-librespot %_description
 
 %prep
-%autosetup -p1 -n %{srcname}-%{version}
+%autosetup -p1 -n %{srcname}-%{commit}
 # Extract bundled protobuf source alongside the main source
 tar -xf %{SOURCE1} -C %{_builddir}
 %generate_buildrequires
@@ -64,6 +64,9 @@ tar -xf %{SOURCE1} -C %{_builddir}
 %{python3_sitelib}/librespot_player
 
 %changelog
+* Thu Oct 08 2026 Simone Caronni <negativo17@gmail.com> - 0.0.10^20260804git683d9e7-1
+- Update to latest snapshot.
+
 * Sat Jun 06 2026 Simone Caronni <negativo17@gmail.com> - 0.0.10-3
 - Bundle protobuf 3.20.3.
 
